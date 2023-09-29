@@ -1,0 +1,3 @@
+module zilliangroup/zweb-builder-backend
+
+go 1.21.0
