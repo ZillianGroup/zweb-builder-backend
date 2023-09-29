@@ -1,4 +1,4 @@
-// Copyright 2022 The ILLA Authors.
+// Copyright 2022 The ZWEB Authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,8 +18,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/illacloud/builder-backend/src/actionruntime/common"
-	resourcemanager "github.com/illacloud/builder-backend/src/utils/illaresourcemanagersdk"
+	"github.com/zilliangroup/builder-backend/src/actionruntime/common"
+	resourcemanager "github.com/zilliangroup/builder-backend/src/utils/zwebresourcemanagersdk"
 )
 
 type AIAgentConnector struct {
@@ -59,7 +59,7 @@ func (r *AIAgentConnector) Run(resourceOptions map[string]interface{}, actionOpt
 	}
 
 	// call api
-	api, errInNewAPI := resourcemanager.NewIllaResourceManagerRestAPI()
+	api, errInNewAPI := resourcemanager.NewZWebResourceManagerRestAPI()
 	if errInNewAPI != nil {
 		return res, errInNewAPI
 	}

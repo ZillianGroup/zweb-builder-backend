@@ -3,8 +3,8 @@ package response
 import (
 	"net/url"
 
-	"github.com/illacloud/builder-backend/src/model"
-	"github.com/illacloud/builder-backend/src/utils/config"
+	"github.com/zilliangroup/builder-backend/src/model"
+	"github.com/zilliangroup/builder-backend/src/utils/config"
 )
 
 type GoogleSheetsOAuth2Response struct {
@@ -13,8 +13,8 @@ type GoogleSheetsOAuth2Response struct {
 
 func NewGoogleSheetsOAuth2Response(accessType int, accessToken string) *GoogleSheetsOAuth2Response {
 	conf := config.GetInstance()
-	googleOAuthClientID := conf.GetIllaGoogleSheetsClientID()
-	redirectURI := conf.GetIllaGoogleSheetsRedirectURI()
+	googleOAuthClientID := conf.GetZWebGoogleSheetsClientID()
+	redirectURI := conf.GetZWebGoogleSheetsRedirectURI()
 	urlObject := url.URL{}
 	if accessType == model.GOOGLE_SHEETS_OAUTH2_ACCESS_TYPE_READ_ONLY {
 		urlObject = url.URL{

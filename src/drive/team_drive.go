@@ -4,8 +4,8 @@ import (
 	"strings"
 
 	"github.com/google/uuid"
-	"github.com/illacloud/builder-backend/src/model"
-	"github.com/illacloud/builder-backend/src/utils/config"
+	"github.com/zilliangroup/builder-backend/src/model"
+	"github.com/zilliangroup/builder-backend/src/utils/config"
 )
 
 /**

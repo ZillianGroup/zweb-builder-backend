@@ -1,7 +1,7 @@
 package websocket
 
 import (
-	"github.com/illacloud/builder-backend/src/model"
+	"github.com/zilliangroup/builder-backend/src/model"
 )
 
 const DEFAULT_ROOM_SLOT = 0

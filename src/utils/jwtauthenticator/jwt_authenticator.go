@@ -6,10 +6,10 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
-	"github.com/illacloud/builder-backend/src/utils/config"
+	"github.com/zilliangroup/builder-backend/src/utils/config"
 )
 
-const JWT_ISSUER = "ILLA Cloud"
+const JWT_ISSUER = "ZWEB Cloud"
 const JWT_TOKEN_DEFAULT_EXIPRED_PERIOD = time.Minute * 30
 
 type DefaultClaims struct {

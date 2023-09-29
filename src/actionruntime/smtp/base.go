@@ -1,4 +1,4 @@
-// Copyright 2022 The ILLA Authors.
+// Copyright 2022 The ZWEB Authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ func (s *Connector) getConnectionWithOptions(resourceOptions map[string]interfac
 }
 
 func attachSizeLimiter(contentLength int64) bool {
-	limitStr := os.Getenv("ILLA_S3_LIMIT")
+	limitStr := os.Getenv("ZWEB_S3_LIMIT")
 	limit64, err := strconv.ParseInt(limitStr, 10, 64)
 	if err != nil {
 		limit64 = 5

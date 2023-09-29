@@ -1,4 +1,4 @@
-// Copyright 2022 The ILLA Authors.
+// Copyright 2022 The ZWEB Authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,11 +17,11 @@ package filter
 import (
 	"errors"
 
-	"github.com/illacloud/builder-backend/src/model"
-	"github.com/illacloud/builder-backend/src/utils/datacontrol"
-	"github.com/illacloud/builder-backend/src/utils/remotejwtauth"
-	"github.com/illacloud/builder-backend/src/utils/supervisor"
-	"github.com/illacloud/builder-backend/src/websocket"
+	"github.com/zilliangroup/builder-backend/src/model"
+	"github.com/zilliangroup/builder-backend/src/utils/datacontrol"
+	"github.com/zilliangroup/builder-backend/src/utils/remotejwtauth"
+	"github.com/zilliangroup/builder-backend/src/utils/supervisor"
+	"github.com/zilliangroup/builder-backend/src/websocket"
 )
 
 func SignalEnter(hub *websocket.Hub, message *websocket.Message) error {

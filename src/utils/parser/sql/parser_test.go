@@ -1,4 +1,4 @@
-// Copyright 2022 The ILLA Authors.
+// Copyright 2022 The ZWEB Authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@ func TestIsSelectSQL2(t *testing.T) {
 func TestIsSelectSQL3(t *testing.T) {
 	sql_3 := `
 	/* update syntax for client query */
-	update staff set Name = 'james@illasoft.com' where Email = 'wei'
+	update staff set Name = 'james@zilliangroup.com' where Email = 'wei'
 	`
 	lexer := NewLexer(sql_3)
 	doesItIs, err := IsSelectSQL(lexer)
@@ -64,7 +64,7 @@ func TestIsSelectSQL3(t *testing.T) {
 func TestIsSelectSQL4(t *testing.T) {
 	sql_4 := `
 	/* insert syntax for client query */
-	Insert into data ( Name, id ) VALUES ('james@illasoft.com', 1219)
+	Insert into data ( Name, id ) VALUES ('james@zilliangroup.com', 1219)
 	`
 	lexer := NewLexer(sql_4)
 	doesItIs, err := IsSelectSQL(lexer)

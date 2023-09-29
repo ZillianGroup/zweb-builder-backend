@@ -2,8 +2,8 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/illacloud/builder-backend/src/model"
-	"github.com/illacloud/builder-backend/src/utils/resourcelist"
+	"github.com/zilliangroup/builder-backend/src/model"
+	"github.com/zilliangroup/builder-backend/src/utils/resourcelist"
 )
 
 func (controller *Controller) ValidateActionTemplate(c *gin.Context, action *model.Action) error {

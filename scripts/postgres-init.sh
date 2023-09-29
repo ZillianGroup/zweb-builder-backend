@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
 psql -U postgres postgres <<EOF
--- init illa_builder
+-- init zweb_builder
 
 
-create database illa_builder;
+create database zweb_builder;
 
-\c illa_builder;
+\c zweb_builder;
 
-create user illa_builder with encrypted password 'illa2022';
+create user zweb_builder with encrypted password 'zweb2022';
 
-grant all privileges on database illa_builder to illa_builder;
+grant all privileges on database zweb_builder to zweb_builder;
 
 CREATE EXTENSION pg_trgm;
 
@@ -33,7 +33,7 @@ create table if not exists apps (
 
 );
 
-alter table apps owner to illa_builder;
+alter table apps owner to zweb_builder;
 
 -- app_snapshots
 create table if not exists app_snapshots (
@@ -47,7 +47,7 @@ create table if not exists app_snapshots (
     created_at              timestamp                       not null
 );
 
-alter table app_snapshots owner to illa_builder;
+alter table app_snapshots owner to zweb_builder;
 
 -- resource
 create table if not exists resources (
@@ -63,7 +63,7 @@ create table if not exists resources (
     updated_by              bigint                          not null
 );
 
-alter table resources owner to illa_builder;
+alter table resources owner to zweb_builder;
 
 -- actions
 create table if not exists actions (
@@ -86,7 +86,7 @@ create table if not exists actions (
 );
 
 create index if not exists actions_at_apprefid_and_version on actions (app_ref_id, version);
-alter table actions owner to illa_builder;
+alter table actions owner to zweb_builder;
 
 
 ALTER TABLE actions DROP CONSTRAINT IF EXISTS actions_displayname_constrainte,
@@ -120,7 +120,7 @@ CREATE INDEX tree_states_with_fulltextgin_at_name ON tree_states USING gin (to_t
 ALTER TABLE tree_states DROP CONSTRAINT IF EXISTS tree_states_displayname_constrainte,
 ADD CONSTRAINT tree_states_displayname_constrainte UNIQUE (version, app_ref_id, name);
 
-alter table tree_states owner to illa_builder;
+alter table tree_states owner to zweb_builder;
 
 -- kv_states, component kv_states
 create table if not exists kv_states (
@@ -144,7 +144,7 @@ CREATE INDEX kv_states_with_fulltextgin_at_key ON kv_states USING gin (to_tsvect
 ALTER TABLE kv_states DROP CONSTRAINT IF EXISTS kv_states_displayname_constrainte,
 ADD CONSTRAINT kv_states_displayname_constrainte UNIQUE (version, app_ref_id, key);
 
-alter table kv_states owner to illa_builder;
+alter table kv_states owner to zweb_builder;
 
 -- set_states, component set_states
 create table if not exists set_states (
@@ -168,6 +168,6 @@ CREATE INDEX set_states_with_fulltextgin_at_value ON set_states USING gin (to_ts
 ALTER TABLE set_states DROP CONSTRAINT IF EXISTS set_states_displayname_constrainte,
 ADD CONSTRAINT set_states_displayname_constrainte UNIQUE (version, app_ref_id, value);
 
-alter table set_states owner to illa_builder;
+alter table set_states owner to zweb_builder;
 
 EOF

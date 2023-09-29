@@ -8,16 +8,16 @@ import (
 
 	"github.com/gorilla/mux"
 	gws "github.com/gorilla/websocket"
-	"github.com/illacloud/builder-backend/src/driver/postgres"
-	"github.com/illacloud/builder-backend/src/storage"
-	"github.com/illacloud/builder-backend/src/utils/accesscontrol"
-	"github.com/illacloud/builder-backend/src/utils/builderoperation"
-	"github.com/illacloud/builder-backend/src/utils/config"
-	"github.com/illacloud/builder-backend/src/utils/idconvertor"
-	"github.com/illacloud/builder-backend/src/utils/logger"
-	"github.com/illacloud/builder-backend/src/utils/supervisor"
-	"github.com/illacloud/builder-backend/src/websocket"
-	filter "github.com/illacloud/builder-backend/src/websocket-filter"
+	"github.com/zilliangroup/builder-backend/src/driver/postgres"
+	"github.com/zilliangroup/builder-backend/src/storage"
+	"github.com/zilliangroup/builder-backend/src/utils/accesscontrol"
+	"github.com/zilliangroup/builder-backend/src/utils/builderoperation"
+	"github.com/zilliangroup/builder-backend/src/utils/config"
+	"github.com/zilliangroup/builder-backend/src/utils/idconvertor"
+	"github.com/zilliangroup/builder-backend/src/utils/logger"
+	"github.com/zilliangroup/builder-backend/src/utils/supervisor"
+	"github.com/zilliangroup/builder-backend/src/websocket"
+	filter "github.com/zilliangroup/builder-backend/src/websocket-filter"
 	"go.uber.org/zap"
 )
 
@@ -106,7 +106,7 @@ func main() {
 		w.Header().Add("Access-Control-Allow-Credentials", "true")
 		w.Header().Add("Access-Control-Allow-Headers", "*")
 		w.Header().Add("Access-Control-Expose-Headers", "Content-Length, Access-Control-Allow-Origin, "+
-			"Access-Control-Allow-Headers, Authorization, Cache-Control, Content-Language, Content-Type, illa-token")
+			"Access-Control-Allow-Headers, Authorization, Cache-Control, Content-Language, Content-Type, zweb-token")
 		w.Header().Add("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS, HEAD")
 		w.Header().Add("Content-Type", "application/json")
 		if r.Method == "OPTIONS" {
@@ -195,6 +195,6 @@ func main() {
 		ReadTimeout:  60 * time.Second,
 	}
 
-	log.Printf("[START] illa-builder-backend-websocket service serve on %s", server.Addr)
+	log.Printf("[START] zweb-builder-backend-websocket service serve on %s", server.Addr)
 	log.Fatal(server.ListenAndServe())
 }

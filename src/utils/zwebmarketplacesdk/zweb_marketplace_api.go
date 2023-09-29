@@ -1,4 +1,4 @@
-package illamarketplacesdk
+package zwebmarketplacesdk
 
 import (
 	"encoding/json"
@@ -8,8 +8,8 @@ import (
 	"net/http"
 
 	"github.com/go-resty/resty/v2"
-	"github.com/illacloud/builder-backend/src/utils/config"
-	"github.com/illacloud/builder-backend/src/utils/tokenvalidator"
+	"github.com/zilliangroup/builder-backend/src/utils/config"
+	"github.com/zilliangroup/builder-backend/src/utils/tokenvalidator"
 )
 
 const (
@@ -28,29 +28,29 @@ const (
 	PRODUCT_TYPE_HUBS     = "hubs"
 )
 
-type IllaMarketplaceRestAPI struct {
+type ZWebMarketplaceRestAPI struct {
 	Config    *config.Config
 	Validator *tokenvalidator.RequestTokenValidator
 	Debug     bool `json:"-"`
 }
 
-func NewIllaMarketplaceRestAPI() *IllaMarketplaceRestAPI {
+func NewZWebMarketplaceRestAPI() *ZWebMarketplaceRestAPI {
 	requestTokenValidator := tokenvalidator.NewRequestTokenValidator()
-	return &IllaMarketplaceRestAPI{
+	return &ZWebMarketplaceRestAPI{
 		Config:    config.GetInstance(),
 		Validator: requestTokenValidator,
 	}
 }
 
-func (r *IllaMarketplaceRestAPI) CloseDebug() {
+func (r *ZWebMarketplaceRestAPI) CloseDebug() {
 	r.Debug = false
 }
 
-func (r *IllaMarketplaceRestAPI) OpenDebug() {
+func (r *ZWebMarketplaceRestAPI) OpenDebug() {
 	r.Debug = true
 }
 
-func (r *IllaMarketplaceRestAPI) ForkCounter(productType string, productID int) error {
+func (r *ZWebMarketplaceRestAPI) ForkCounter(productType string, productID int) error {
 	// self-hist need skip this method.
 	if !r.Config.IsCloudMode() {
 		return nil
@@ -58,9 +58,9 @@ func (r *IllaMarketplaceRestAPI) ForkCounter(productType string, productID int) 
 	client := resty.New()
 	resp, err := client.R().
 		SetHeader("Request-Token", r.Validator.GenerateValidateToken(fmt.Sprintf("%d", productID))).
-		Post(r.Config.IllaMarketplaceInternalRestAPI + fmt.Sprintf(FORK_COUNTER_API, productType, productID))
+		Post(r.Config.ZWebMarketplaceInternalRestAPI + fmt.Sprintf(FORK_COUNTER_API, productType, productID))
 	if r.Debug {
-		log.Printf("[IllaMarketplaceRestAPI.ForkCounter()]  response: %+v, err: %+v", resp, err)
+		log.Printf("[ZWebMarketplaceRestAPI.ForkCounter()]  response: %+v, err: %+v", resp, err)
 	}
 	if resp.StatusCode() != http.StatusOK && resp.StatusCode() != http.StatusCreated {
 		if err != nil {
@@ -71,7 +71,7 @@ func (r *IllaMarketplaceRestAPI) ForkCounter(productType string, productID int) 
 	return nil
 }
 
-func (r *IllaMarketplaceRestAPI) DeleteTeamAllProducts(teamID int) error {
+func (r *ZWebMarketplaceRestAPI) DeleteTeamAllProducts(teamID int) error {
 	// self-hist need skip this method.
 	if !r.Config.IsCloudMode() {
 		return nil
@@ -79,9 +79,9 @@ func (r *IllaMarketplaceRestAPI) DeleteTeamAllProducts(teamID int) error {
 	client := resty.New()
 	resp, err := client.R().
 		SetHeader("Request-Token", r.Validator.GenerateValidateToken(fmt.Sprintf("%d", teamID))).
-		Delete(r.Config.IllaMarketplaceInternalRestAPI + fmt.Sprintf(DELETE_TEAM_ALL_PRODUCTS, teamID))
+		Delete(r.Config.ZWebMarketplaceInternalRestAPI + fmt.Sprintf(DELETE_TEAM_ALL_PRODUCTS, teamID))
 	if r.Debug {
-		log.Printf("[IllaMarketplaceRestAPI.DeleteTeamAllProducts()]  response: %+v, err: %+v", resp, err)
+		log.Printf("[ZWebMarketplaceRestAPI.DeleteTeamAllProducts()]  response: %+v, err: %+v", resp, err)
 	}
 	if resp.StatusCode() != http.StatusOK && resp.StatusCode() != http.StatusCreated {
 		if err != nil {
@@ -92,7 +92,7 @@ func (r *IllaMarketplaceRestAPI) DeleteTeamAllProducts(teamID int) error {
 	return nil
 }
 
-func (r *IllaMarketplaceRestAPI) DeleteProduct(productType string, productID int) error {
+func (r *ZWebMarketplaceRestAPI) DeleteProduct(productType string, productID int) error {
 	// self-hist need skip this method.
 	if !r.Config.IsCloudMode() {
 		return nil
@@ -100,9 +100,9 @@ func (r *IllaMarketplaceRestAPI) DeleteProduct(productType string, productID int
 	client := resty.New()
 	resp, err := client.R().
 		SetHeader("Request-Token", r.Validator.GenerateValidateToken(fmt.Sprintf("%d", productID))).
-		Delete(r.Config.IllaMarketplaceInternalRestAPI + fmt.Sprintf(DELETE_PRODUCT, productType, productID))
+		Delete(r.Config.ZWebMarketplaceInternalRestAPI + fmt.Sprintf(DELETE_PRODUCT, productType, productID))
 	if r.Debug {
-		log.Printf("[IllaMarketplaceRestAPI.DeleteProduct()]  response: %+v, err: %+v", resp, err)
+		log.Printf("[ZWebMarketplaceRestAPI.DeleteProduct()]  response: %+v, err: %+v", resp, err)
 	}
 	if resp.StatusCode() != http.StatusOK && resp.StatusCode() != http.StatusCreated {
 		if err != nil {
@@ -113,7 +113,7 @@ func (r *IllaMarketplaceRestAPI) DeleteProduct(productType string, productID int
 	return nil
 }
 
-func (r *IllaMarketplaceRestAPI) UpdateProduct(productType string, productID int, product interface{}) error {
+func (r *ZWebMarketplaceRestAPI) UpdateProduct(productType string, productID int, product interface{}) error {
 	// self-hist need skip this method.
 	if !r.Config.IsCloudMode() {
 		return nil
@@ -127,10 +127,10 @@ func (r *IllaMarketplaceRestAPI) UpdateProduct(productType string, productID int
 	resp, err := client.R().
 		SetHeader("Request-Token", r.Validator.GenerateValidateToken(fmt.Sprintf("%d", productID), string(b))).
 		SetBody(product).
-		Put(r.Config.IllaMarketplaceInternalRestAPI + fmt.Sprintf(UPDATE_PRODUCTS, productType, productID))
-	log.Printf("[IllaMarketplaceRestAPI.UpdateProduct()]  response: %+v, err: %+v", resp, err)
+		Put(r.Config.ZWebMarketplaceInternalRestAPI + fmt.Sprintf(UPDATE_PRODUCTS, productType, productID))
+	log.Printf("[ZWebMarketplaceRestAPI.UpdateProduct()]  response: %+v, err: %+v", resp, err)
 	if r.Debug {
-		log.Printf("[IllaMarketplaceRestAPI.UpdateProduct()]  response: %+v, err: %+v", resp, err)
+		log.Printf("[ZWebMarketplaceRestAPI.UpdateProduct()]  response: %+v, err: %+v", resp, err)
 	}
 	if resp.StatusCode() != http.StatusOK && resp.StatusCode() != http.StatusCreated {
 		if err != nil {

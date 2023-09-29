@@ -1,4 +1,4 @@
-// Copyright 2023 Illa Soft, Inc.
+// Copyright 2023 ZWeb Soft, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@ package appwrite
 import (
 	"strings"
 
-	"github.com/illacloud/appwrite-sdk-go/appwrite"
 	"github.com/mitchellh/mapstructure"
+	"github.com/zilliangroup/appwrite-sdk-go/appwrite"
 )
 
 func (a *Connector) getClientWithOpts(Opts map[string]interface{}) (*appwrite.Databases, error) {

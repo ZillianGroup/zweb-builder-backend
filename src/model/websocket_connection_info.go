@@ -3,8 +3,8 @@ package model
 import (
 	"fmt"
 
-	"github.com/illacloud/builder-backend/src/utils/config"
-	"github.com/illacloud/builder-backend/src/utils/idconvertor"
+	"github.com/zilliangroup/builder-backend/src/utils/config"
+	"github.com/zilliangroup/builder-backend/src/utils/idconvertor"
 )
 
 const PROTOCOL_WEBSOCKET = "ws"

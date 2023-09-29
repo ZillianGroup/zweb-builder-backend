@@ -7,8 +7,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v4"
 	"github.com/google/uuid"
-	"github.com/illacloud/builder-backend/src/utils/config"
-	"github.com/illacloud/builder-backend/src/utils/supervisor"
+	"github.com/zilliangroup/builder-backend/src/utils/config"
+	"github.com/zilliangroup/builder-backend/src/utils/supervisor"
 )
 
 type AuthClaims struct {

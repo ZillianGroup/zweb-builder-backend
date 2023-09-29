@@ -1,4 +1,4 @@
-// Copyright 2022 The ILLA Authors.
+// Copyright 2022 The ZWEB Authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,9 +22,9 @@ import (
 	"sync"
 
 	resty "github.com/go-resty/resty/v2"
-	"github.com/illacloud/builder-backend/src/utils/config"
-	"github.com/illacloud/builder-backend/src/utils/idconvertor"
-	"github.com/illacloud/builder-backend/src/utils/tokenvalidator"
+	"github.com/zilliangroup/builder-backend/src/utils/config"
+	"github.com/zilliangroup/builder-backend/src/utils/idconvertor"
+	"github.com/zilliangroup/builder-backend/src/utils/tokenvalidator"
 )
 
 const (
@@ -64,7 +64,7 @@ type Supervisor struct {
 func NewSupervisor() *Supervisor {
 	conf := config.GetInstance()
 	return &Supervisor{
-		API:       conf.GetIllaSupervisorInternalRestAPI(),
+		API:       conf.GetZWebSupervisorInternalRestAPI(),
 		Validator: tokenvalidator.NewRequestTokenValidator(),
 	}
 }
@@ -77,7 +77,7 @@ func (supervisor *Supervisor) ValidateUserAccount(token string) (bool, error) {
 		Get(supervisor.API + VALIDATE_USER_ACCOUNT)
 	if resp.StatusCode() != http.StatusOK {
 		if err != nil {
-			return false, errors.New("request illa supervisor failed.")
+			return false, errors.New("request zweb supervisor failed.")
 		}
 		return false, nil
 	}
@@ -92,7 +92,7 @@ func (supervisor *Supervisor) GetTeamPermissions(teamID int) (string, error) {
 		Get(supervisor.API + fmt.Sprintf(GET_TEAM_PERMISSIONS, teamIDString))
 	if resp.StatusCode() != http.StatusOK {
 		if err != nil {
-			return "", errors.New("request illa supervisor failed.")
+			return "", errors.New("request zweb supervisor failed.")
 		}
 		return "", errors.New("validate failed.")
 	}
@@ -113,7 +113,7 @@ func (supervisor *Supervisor) CanAccess(token string, teamID int, unitType int, 
 		Get(supervisor.API + fmt.Sprintf(CAN_ACCESS, teamIDString, unitTypeString, unitIDString, attributeIDString))
 	if resp.StatusCode() != http.StatusOK {
 		if err != nil {
-			return false, errors.New("request illa supervisor failed: " + err.Error())
+			return false, errors.New("request zweb supervisor failed: " + err.Error())
 		}
 		return false, nil
 	}
@@ -133,7 +133,7 @@ func (supervisor *Supervisor) CanManage(token string, teamID int, unitType int, 
 		Get(supervisor.API + fmt.Sprintf(CAN_MANAGE, teamIDString, unitTypeString, unitIDString, attributeIDString))
 	if resp.StatusCode() != http.StatusOK {
 		if err != nil {
-			return false, errors.New("request illa supervisor failed: " + err.Error())
+			return false, errors.New("request zweb supervisor failed: " + err.Error())
 		}
 		return false, nil
 	}
@@ -153,7 +153,7 @@ func (supervisor *Supervisor) CanManageSpecial(token string, teamID int, unitTyp
 		Get(supervisor.API + fmt.Sprintf(CAN_MANAGE_SPECIAL, teamIDString, unitTypeString, unitIDString, attributeIDString))
 	if resp.StatusCode() != http.StatusOK {
 		if err != nil {
-			return false, errors.New("request illa supervisor failed: " + err.Error())
+			return false, errors.New("request zweb supervisor failed: " + err.Error())
 		}
 		return false, nil
 	}
@@ -175,7 +175,7 @@ func (supervisor *Supervisor) CanModify(token string, teamID int, unitType int, 
 		Get(supervisor.API + fmt.Sprintf(CAN_MODIFY, teamIDString, unitTypeString, unitIDString, attributeIDString, fromID, toID))
 	if resp.StatusCode() != http.StatusOK {
 		if err != nil {
-			return false, errors.New("request illa supervisor failed: " + err.Error())
+			return false, errors.New("request zweb supervisor failed: " + err.Error())
 		}
 		return false, nil
 	}
@@ -195,7 +195,7 @@ func (supervisor *Supervisor) CanDelete(token string, teamID int, unitType int, 
 		Get(supervisor.API + fmt.Sprintf(CAN_DELETE, teamIDString, unitTypeString, unitIDString, attributeIDString))
 	if resp.StatusCode() != http.StatusOK {
 		if err != nil {
-			return false, errors.New("request illa supervisor failed: " + err.Error())
+			return false, errors.New("request zweb supervisor failed: " + err.Error())
 		}
 		return false, nil
 	}
@@ -210,7 +210,7 @@ func (supervisor *Supervisor) GetUser(targetUserID int) (string, error) {
 		Get(supervisor.API + fmt.Sprintf(GET_USER, targetUserIDString))
 	if resp.StatusCode() != http.StatusOK {
 		if err != nil {
-			return "", errors.New("request illa supervisor failed.")
+			return "", errors.New("request zweb supervisor failed.")
 		}
 		return "", errors.New("validate failed.")
 	}
@@ -224,7 +224,7 @@ func (supervisor *Supervisor) GetMultiUser(targetUserIDsInString string) (string
 		Get(supervisor.API + fmt.Sprintf(GET_MULTI_USER, targetUserIDsInString))
 	if resp.StatusCode() != http.StatusOK {
 		if err != nil {
-			return "", errors.New("request illa supervisor failed.")
+			return "", errors.New("request zweb supervisor failed.")
 		}
 		return "", errors.New("validate failed.")
 	}
@@ -238,7 +238,7 @@ func (supervisor *Supervisor) GetTeamByIdentifier(targetTeamIdentifier string) (
 		Get(supervisor.API + fmt.Sprintf(GET_TEAM_BY_IDENTIFIER, targetTeamIdentifier))
 	if resp.StatusCode() != http.StatusOK {
 		if err != nil {
-			return "", errors.New("request illa supervisor failed.")
+			return "", errors.New("request zweb supervisor failed.")
 		}
 		return "", errors.New("validate failed.")
 	}
@@ -252,7 +252,7 @@ func (supervisor *Supervisor) GetTeamByID(targetTeamID int) (string, error) {
 		Get(supervisor.API + fmt.Sprintf(GET_TEAM_BY_ID, targetTeamID))
 	if resp.StatusCode() != http.StatusOK {
 		if err != nil {
-			return "", errors.New("request illa supervisor failed.")
+			return "", errors.New("request zweb supervisor failed.")
 		}
 		return "", errors.New("validate failed.")
 	}

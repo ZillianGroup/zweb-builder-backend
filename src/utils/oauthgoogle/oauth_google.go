@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 
 	"github.com/go-resty/resty/v2"
-	"github.com/illacloud/builder-backend/src/utils/config"
+	"github.com/zilliangroup/builder-backend/src/utils/config"
 )
 
 const (
@@ -44,9 +44,9 @@ func (resp *ExchangeTokenResponse) ExportAccessToken() string {
 
 func ExchangeOAuthToken(code string) (*ExchangeTokenResponse, error) {
 	conf := config.GetInstance()
-	googleOAuthClientID := conf.GetIllaGoogleSheetsClientID()
-	googleOAuthClientSecret := conf.GetIllaGoogleSheetsClientSecret()
-	googleOAuthRedirectURI := conf.GetIllaGoogleSheetsRedirectURI()
+	googleOAuthClientID := conf.GetZWebGoogleSheetsClientID()
+	googleOAuthClientSecret := conf.GetZWebGoogleSheetsClientSecret()
+	googleOAuthRedirectURI := conf.GetZWebGoogleSheetsRedirectURI()
 	client := resty.New()
 	// request
 	resp, errInPost := client.R().
@@ -72,8 +72,8 @@ func ExchangeOAuthToken(code string) (*ExchangeTokenResponse, error) {
 
 func RefreshOAuthToken(refreshToken string) (*RefreshTokenResponse, error) {
 	conf := config.GetInstance()
-	googleOAuthClientID := conf.GetIllaGoogleSheetsClientID()
-	googleOAuthClientSecret := conf.GetIllaGoogleSheetsClientSecret()
+	googleOAuthClientID := conf.GetZWebGoogleSheetsClientID()
+	googleOAuthClientSecret := conf.GetZWebGoogleSheetsClientSecret()
 	client := resty.New()
 	// request
 	resp, errInPost := client.R().

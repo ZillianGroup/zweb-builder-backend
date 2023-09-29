@@ -1,8 +1,8 @@
-# illa-builder-backend System Design
+# zweb-builder-backend System Design
 
 ## Overview
 
-`illa-builder-backend` provides the backend APIs and services for the [illa-builder](https://github.com/illacloud/illa-builder). It is responsible for:
+`zweb-builder-backend` provides the backend APIs and services for the [zweb-builder](https://github.com/zilliangroup/zweb-builder). It is responsible for:
 
 - Managing app state
 
@@ -51,9 +51,9 @@ This is the [script](../scripts/postgres-init.sh) that initializes the database 
 
 ## Backend Interfaces
 
-- [illa-builder-backend HTTP API Documents](https://github.com/illacloud/illa-builder-backend-api-docs)
+- [zweb-builder-backend HTTP API Documents](https://github.com/zilliangroup/zweb-builder-backend-api-docs)
 
-- [illa-builder-backend WebSocket Message Documents](https://github.com/illacloud/illa-builder-backend-websocket-docs)
+- [zweb-builder-backend WebSocket Message Documents](https://github.com/zilliangroup/zweb-builder-backend-websocket-docs)
 
 
 ## Scalability

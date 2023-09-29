@@ -1,4 +1,4 @@
-package illaresourcemanagersdk
+package zwebresourcemanagersdk
 
 const (
 	RUN_RESOURCE_RESULT_FIELD_PAYLOAD = "payload"

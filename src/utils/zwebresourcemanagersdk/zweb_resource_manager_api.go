@@ -1,4 +1,4 @@
-package illaresourcemanagersdk
+package zwebresourcemanagersdk
 
 import (
 	"encoding/json"
@@ -9,9 +9,9 @@ import (
 	"strconv"
 
 	"github.com/go-resty/resty/v2"
-	"github.com/illacloud/builder-backend/src/utils/config"
-	"github.com/illacloud/builder-backend/src/utils/resourcelist"
-	"github.com/illacloud/builder-backend/src/utils/tokenvalidator"
+	"github.com/zilliangroup/builder-backend/src/utils/config"
+	"github.com/zilliangroup/builder-backend/src/utils/resourcelist"
+	"github.com/zilliangroup/builder-backend/src/utils/tokenvalidator"
 )
 
 const (
@@ -28,26 +28,26 @@ const (
 	PRODUCT_TYPE_HUBS     = "hubs"
 )
 
-type IllaResourceManagerRestAPI struct {
+type ZWebResourceManagerRestAPI struct {
 	Config *config.Config
 	Debug  bool `json:"-"`
 }
 
-func NewIllaResourceManagerRestAPI() (*IllaResourceManagerRestAPI, error) {
-	return &IllaResourceManagerRestAPI{
+func NewZWebResourceManagerRestAPI() (*ZWebResourceManagerRestAPI, error) {
+	return &ZWebResourceManagerRestAPI{
 		Config: config.GetInstance(),
 	}, nil
 }
 
-func (r *IllaResourceManagerRestAPI) CloseDebug() {
+func (r *ZWebResourceManagerRestAPI) CloseDebug() {
 	r.Debug = false
 }
 
-func (r *IllaResourceManagerRestAPI) OpenDebug() {
+func (r *ZWebResourceManagerRestAPI) OpenDebug() {
 	r.Debug = true
 }
 
-func (r *IllaResourceManagerRestAPI) GetResource(resourceType int, resourceID int) (map[string]interface{}, error) {
+func (r *ZWebResourceManagerRestAPI) GetResource(resourceType int, resourceID int) (map[string]interface{}, error) {
 	// self-hist need skip this method.
 	if !r.Config.IsCloudMode() {
 		return nil, nil
@@ -60,7 +60,7 @@ func (r *IllaResourceManagerRestAPI) GetResource(resourceType int, resourceID in
 	}
 }
 
-func (r *IllaResourceManagerRestAPI) RunResource(resourceType int, resourceID int, req map[string]interface{}) (*RunResourceResult, error) {
+func (r *ZWebResourceManagerRestAPI) RunResource(resourceType int, resourceID int, req map[string]interface{}) (*RunResourceResult, error) {
 	// self-hist need skip this method.
 	if !r.Config.IsCloudMode() {
 		return nil, nil
@@ -73,21 +73,21 @@ func (r *IllaResourceManagerRestAPI) RunResource(resourceType int, resourceID in
 	}
 }
 
-func (r *IllaResourceManagerRestAPI) GetAIAgent(aiAgentID int) (map[string]interface{}, error) {
+func (r *ZWebResourceManagerRestAPI) GetAIAgent(aiAgentID int) (map[string]interface{}, error) {
 	// self-hist need skip this method.
 	if !r.Config.IsCloudMode() {
 		return nil, nil
 	}
 	client := resty.New()
 	tokenValidator := tokenvalidator.NewRequestTokenValidator()
-	uri := r.Config.GetIllaResourceManagerInternalRestAPI() + fmt.Sprintf(GET_AI_AGENT_INTERNAL_API, aiAgentID)
+	uri := r.Config.GetZWebResourceManagerInternalRestAPI() + fmt.Sprintf(GET_AI_AGENT_INTERNAL_API, aiAgentID)
 	resp, errInPost := client.R().
 		SetHeader("Request-Token", tokenValidator.GenerateValidateToken(strconv.Itoa(aiAgentID))).
 		Get(uri)
 	if r.Debug {
-		log.Printf("[IllaResourceManagerRestAPI.GetAiAgent()]  uri: %+v \n", uri)
-		log.Printf("[IllaResourceManagerRestAPI.GetAiAgent()]  response: %+v, err: %+v \n", resp, errInPost)
-		log.Printf("[IllaResourceManagerRestAPI.GetAiAgent()]  resp.StatusCode(): %+v \n", resp.StatusCode())
+		log.Printf("[ZWebResourceManagerRestAPI.GetAiAgent()]  uri: %+v \n", uri)
+		log.Printf("[ZWebResourceManagerRestAPI.GetAiAgent()]  response: %+v, err: %+v \n", resp, errInPost)
+		log.Printf("[ZWebResourceManagerRestAPI.GetAiAgent()]  resp.StatusCode(): %+v \n", resp.StatusCode())
 	}
 	if errInPost != nil {
 		return nil, errInPost
@@ -104,7 +104,7 @@ func (r *IllaResourceManagerRestAPI) GetAIAgent(aiAgentID int) (map[string]inter
 	return aiAgent, nil
 }
 
-func (r *IllaResourceManagerRestAPI) RunAIAgent(req map[string]interface{}) (*RunResourceResult, error) {
+func (r *ZWebResourceManagerRestAPI) RunAIAgent(req map[string]interface{}) (*RunResourceResult, error) {
 	// self-hist need skip this method.
 	if !r.Config.IsCloudMode() {
 		return nil, nil
@@ -114,12 +114,12 @@ func (r *IllaResourceManagerRestAPI) RunAIAgent(req map[string]interface{}) (*Ru
 		return nil, errInNewReq
 	}
 	client := resty.New()
-	uri := r.Config.GetIllaResourceManagerInternalRestAPI() + fmt.Sprintf(RUN_AI_AGENT_INTERNAL_API, reqInstance.ExportAIAgentIDInInt())
+	uri := r.Config.GetZWebResourceManagerInternalRestAPI() + fmt.Sprintf(RUN_AI_AGENT_INTERNAL_API, reqInstance.ExportAIAgentIDInInt())
 	if r.Debug {
-		log.Printf("[IllaResourceManagerRestAPI.RunAiAgent()]  uri: %+v \n", uri)
+		log.Printf("[ZWebResourceManagerRestAPI.RunAiAgent()]  uri: %+v \n", uri)
 	}
 	requestToken := reqInstance.ExportRequestToken()
-	log.Printf("[IllaResourceManagerRestAPI.RunAiAgent()]  uri: %+v \n", uri)
+	log.Printf("[ZWebResourceManagerRestAPI.RunAiAgent()]  uri: %+v \n", uri)
 	log.Printf("[reqInstance]  reqInstance: %+v \n", reqInstance)
 	fmt.Printf("[requestToken] %+v\n", requestToken)
 	resp, errInPost := client.R().
@@ -128,8 +128,8 @@ func (r *IllaResourceManagerRestAPI) RunAIAgent(req map[string]interface{}) (*Ru
 		SetBody(req).
 		Post(uri)
 	if r.Debug {
-		log.Printf("[IllaResourceManagerRestAPI.RunAiAgent()]  response: %+v, err: %+v \n", resp, errInPost)
-		log.Printf("[IllaResourceManagerRestAPI.RunAiAgent()]  resp.StatusCode(): %+v \n", resp.StatusCode())
+		log.Printf("[ZWebResourceManagerRestAPI.RunAiAgent()]  response: %+v, err: %+v \n", resp, errInPost)
+		log.Printf("[ZWebResourceManagerRestAPI.RunAiAgent()]  resp.StatusCode(): %+v \n", resp.StatusCode())
 	}
 	if errInPost != nil {
 		return nil, errInPost
@@ -146,21 +146,21 @@ func (r *IllaResourceManagerRestAPI) RunAIAgent(req map[string]interface{}) (*Ru
 	return runResourceResult, nil
 }
 
-func (r *IllaResourceManagerRestAPI) DeleteTeamAllAIAgent(teamID int) error {
+func (r *ZWebResourceManagerRestAPI) DeleteTeamAllAIAgent(teamID int) error {
 	// self-hist need skip this method.
 	if !r.Config.IsCloudMode() {
 		return nil
 	}
 	client := resty.New()
 	tokenValidator := tokenvalidator.NewRequestTokenValidator()
-	uri := r.Config.GetIllaResourceManagerInternalRestAPI() + fmt.Sprintf(DELETE_TEAM_ALL_AI_AGENT_INTERNAL_API, teamID)
+	uri := r.Config.GetZWebResourceManagerInternalRestAPI() + fmt.Sprintf(DELETE_TEAM_ALL_AI_AGENT_INTERNAL_API, teamID)
 	resp, errInDelete := client.R().
 		SetHeader("Request-Token", tokenValidator.GenerateValidateToken(strconv.Itoa(teamID))).
 		Delete(uri)
 	if r.Debug {
-		log.Printf("[IllaResourceManagerRestAPI.DeleteTeamAllAiAgent()]  uri: %+v \n", uri)
-		log.Printf("[IllaResourceManagerRestAPI.DeleteTeamAllAiAgent()]  response: %+v, err: %+v \n", resp, errInDelete)
-		log.Printf("[IllaResourceManagerRestAPI.DeleteTeamAllAiAgent()]  resp.StatusCode(): %+v \n", resp.StatusCode())
+		log.Printf("[ZWebResourceManagerRestAPI.DeleteTeamAllAiAgent()]  uri: %+v \n", uri)
+		log.Printf("[ZWebResourceManagerRestAPI.DeleteTeamAllAiAgent()]  response: %+v, err: %+v \n", resp, errInDelete)
+		log.Printf("[ZWebResourceManagerRestAPI.DeleteTeamAllAiAgent()]  resp.StatusCode(): %+v \n", resp.StatusCode())
 	}
 	if errInDelete != nil {
 		return errInDelete

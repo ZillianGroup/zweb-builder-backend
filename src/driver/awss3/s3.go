@@ -7,7 +7,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
-	"github.com/illacloud/builder-backend/src/utils/config"
+	"github.com/zilliangroup/builder-backend/src/utils/config"
 )
 
 type AWSConfig struct {
@@ -24,10 +24,10 @@ const (
 	DRIVE_TYPE_SYSTEM = 1
 	DRIVE_TYPE_TEAM   = 2
 )
-const AWS_DRIVE_URL_ILLA_CLOUD = "illa-cloud-storage.illacloud.com.s3.ap-northeast-1.amazonaws.com"
-const AWS_DRIVE_URL_ILLA_CLOUD_TEAM = "illa-cloud-team-storage.illacloud.com.s3.ap-northeast-1.amazonaws.com"
-const ILLA_DRIVE_URL_ILLA_CLOUD = "illa-cloud-storage.illacloud.com"
-const ILLA_DRIVE_URL_ILLA_CLOUD_TEAM = "illa-cloud-team-storage.illacloud.com"
+const AWS_DRIVE_URL_ZWEB_CLOUD = "zweb-cloud-storage.zilliangroup.com.s3.ap-northeast-1.amazonaws.com"
+const AWS_DRIVE_URL_ZWEB_CLOUD_TEAM = "zweb-cloud-team-storage.zilliangroup.com.s3.ap-northeast-1.amazonaws.com"
+const ZWEB_DRIVE_URL_ZWEB_CLOUD = "zweb-cloud-storage.zilliangroup.com"
+const ZWEB_DRIVE_URL_ZWEB_CLOUD_TEAM = "zweb-cloud-team-storage.zilliangroup.com"
 
 func NewAWSConfig(endpoint string, accessKeyID string, accessKeySecret string, region string, bucketName string, uploadTimeout int) *AWSConfig {
 	timeout := time.Duration(uploadTimeout)

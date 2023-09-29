@@ -1,8 +1,8 @@
 package filter
 
 import (
-	"github.com/illacloud/builder-backend/src/model"
-	"github.com/illacloud/builder-backend/src/websocket"
+	"github.com/zilliangroup/builder-backend/src/model"
+	"github.com/zilliangroup/builder-backend/src/websocket"
 )
 
 func TakeSnapshot(hub *websocket.Hub, message *websocket.Message) error {

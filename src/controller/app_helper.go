@@ -1,4 +1,4 @@
-// Copyright 2022 The ILLA Authors.
+// Copyright 2022 The ZWEB Authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,10 +19,10 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/illacloud/builder-backend/src/model"
-	"github.com/illacloud/builder-backend/src/utils/datacontrol"
-	"github.com/illacloud/builder-backend/src/utils/illaresourcemanagersdk"
-	"github.com/illacloud/builder-backend/src/utils/resourcelist"
+	"github.com/zilliangroup/builder-backend/src/model"
+	"github.com/zilliangroup/builder-backend/src/utils/datacontrol"
+	"github.com/zilliangroup/builder-backend/src/utils/resourcelist"
+	"github.com/zilliangroup/builder-backend/src/utils/zwebresourcemanagersdk"
 
 	"github.com/gin-gonic/gin"
 )
@@ -263,7 +263,7 @@ func (controller *Controller) GetTargetVersionFullApp(c *gin.Context, teamID int
 		actionForExport := model.NewActionForExport(action)
 		// append remote virtual resource
 		if actionForExport.Type == resourcelist.TYPE_AI_AGENT {
-			api, errInNewAPI := illaresourcemanagersdk.NewIllaResourceManagerRestAPI()
+			api, errInNewAPI := zwebresourcemanagersdk.NewZWebResourceManagerRestAPI()
 			if errInNewAPI != nil {
 				controller.FeedbackBadRequest(c, ERROR_FLAG_CAN_NOT_CREATE_ACTION, "error in fetch action mapped virtual resource: "+errInNewAPI.Error())
 				return nil, errInNewAPI
@@ -453,7 +453,7 @@ func (controller *Controller) GetTargetVersionFullAppByAppID(c *gin.Context, app
 		actionForExport := model.NewActionForExport(action)
 		// append remote virtual resource
 		if actionForExport.Type == resourcelist.TYPE_AI_AGENT {
-			api, errInNewAPI := illaresourcemanagersdk.NewIllaResourceManagerRestAPI()
+			api, errInNewAPI := zwebresourcemanagersdk.NewZWebResourceManagerRestAPI()
 			if errInNewAPI != nil {
 				controller.FeedbackBadRequest(c, ERROR_FLAG_CAN_NOT_CREATE_ACTION, "error in fetch action mapped virtual resource: "+errInNewAPI.Error())
 				return nil, errInNewAPI

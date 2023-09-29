@@ -1,6 +1,6 @@
-package illamarketplacesdk
+package zwebmarketplacesdk
 
-import "github.com/illacloud/builder-backend/src/model"
+import "github.com/zilliangroup/builder-backend/src/model"
 
 type AppForMarketplace struct {
 	Name        string `json:"name"`

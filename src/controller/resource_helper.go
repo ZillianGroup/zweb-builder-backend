@@ -4,9 +4,9 @@ import (
 	"errors"
 
 	"github.com/gin-gonic/gin"
-	"github.com/illacloud/builder-backend/src/actionruntime/common"
-	"github.com/illacloud/builder-backend/src/model"
-	"github.com/illacloud/builder-backend/src/utils/resourcelist"
+	"github.com/zilliangroup/builder-backend/src/actionruntime/common"
+	"github.com/zilliangroup/builder-backend/src/model"
+	"github.com/zilliangroup/builder-backend/src/utils/resourcelist"
 )
 
 func (controller *Controller) ValidateResourceConternt(c *gin.Context, resource *model.Resource) error {

@@ -1,7 +1,7 @@
 package response
 
 import (
-	"github.com/illacloud/builder-backend/src/model"
+	"github.com/zilliangroup/builder-backend/src/model"
 )
 
 type AppMapForExport struct {

@@ -37,57 +37,57 @@ func GetInstance() *Config {
 
 type Config struct {
 	// server config
-	ServerHost                    string `env:"ILLA_SERVER_HOST"                    envDefault:"0.0.0.0"`
-	ServerPort                    string `env:"ILLA_SERVER_PORT"                    envDefault:"8001"`
-	InternalServerPort            string `env:"ILLA_SERVER_INTERNAL_PORT"           envDefault:"9005"`
-	ServerMode                    string `env:"ILLA_SERVER_MODE"                    envDefault:"debug"`
-	DeployMode                    string `env:"ILLA_DEPLOY_MODE"                    envDefault:"self-host"`
-	SecretKey                     string `env:"ILLA_SECRET_KEY"                     envDefault:"8xEMrWkBARcDDYQ"`
-	WebsocketServerHost           string `env:"ILLA_WEBSOCKET_SERVER_HOST"          envDefault:"0.0.0.0"`
-	WebsocketServerPort           string `env:"ILLA_WEBSOCKET_SERVER_PORT"          envDefault:"8002"`
-	WebsocketServerConnectionHost string `env:"ILLA_WEBSOCKET_CONNECTION_HOST"      envDefault:"0.0.0.0"`
-	WebsocketServerConnectionPort string `env:"ILLA_WEBSOCKET_CONNECTION_PORT"      envDefault:"80"`
-	WSSEnabled                    string `env:"ILLA_WSS_ENABLED"                    envDefault:"false"`
+	ServerHost                    string `env:"ZWEB_SERVER_HOST"                    envDefault:"0.0.0.0"`
+	ServerPort                    string `env:"ZWEB_SERVER_PORT"                    envDefault:"8001"`
+	InternalServerPort            string `env:"ZWEB_SERVER_INTERNAL_PORT"           envDefault:"9005"`
+	ServerMode                    string `env:"ZWEB_SERVER_MODE"                    envDefault:"debug"`
+	DeployMode                    string `env:"ZWEB_DEPLOY_MODE"                    envDefault:"self-host"`
+	SecretKey                     string `env:"ZWEB_SECRET_KEY"                     envDefault:"8xEMrWkBARcDDYQ"`
+	WebsocketServerHost           string `env:"ZWEB_WEBSOCKET_SERVER_HOST"          envDefault:"0.0.0.0"`
+	WebsocketServerPort           string `env:"ZWEB_WEBSOCKET_SERVER_PORT"          envDefault:"8002"`
+	WebsocketServerConnectionHost string `env:"ZWEB_WEBSOCKET_CONNECTION_HOST"      envDefault:"0.0.0.0"`
+	WebsocketServerConnectionPort string `env:"ZWEB_WEBSOCKET_CONNECTION_PORT"      envDefault:"80"`
+	WSSEnabled                    string `env:"ZWEB_WSS_ENABLED"                    envDefault:"false"`
 
 	// key for idconvertor
-	RandomKey string `env:"ILLA_RANDOM_KEY"  envDefault:"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"`
+	RandomKey string `env:"ZWEB_RANDOM_KEY"  envDefault:"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"`
 	// storage config
-	PostgresAddr     string `env:"ILLA_PG_ADDR" envDefault:"localhost"`
-	PostgresPort     string `env:"ILLA_PG_PORT" envDefault:"5432"`
-	PostgresUser     string `env:"ILLA_PG_USER" envDefault:"illa_builder"`
-	PostgresPassword string `env:"ILLA_PG_PASSWORD" envDefault:"71De5JllWSetLYU"`
-	PostgresDatabase string `env:"ILLA_PG_DATABASE" envDefault:"illa_builder"`
+	PostgresAddr     string `env:"ZWEB_PG_ADDR" envDefault:"localhost"`
+	PostgresPort     string `env:"ZWEB_PG_PORT" envDefault:"5432"`
+	PostgresUser     string `env:"ZWEB_PG_USER" envDefault:"zweb_builder"`
+	PostgresPassword string `env:"ZWEB_PG_PASSWORD" envDefault:"71De5JllWSetLYU"`
+	PostgresDatabase string `env:"ZWEB_PG_DATABASE" envDefault:"zweb_builder"`
 	// cache config
-	RedisAddr     string `env:"ILLA_REDIS_ADDR" envDefault:"localhost"`
-	RedisPort     string `env:"ILLA_REDIS_PORT" envDefault:"6379"`
-	RedisPassword string `env:"ILLA_REDIS_PASSWORD" envDefault:"illa2022"`
-	RedisDatabase int    `env:"ILLA_REDIS_DATABASE" envDefault:"0"`
+	RedisAddr     string `env:"ZWEB_REDIS_ADDR" envDefault:"localhost"`
+	RedisPort     string `env:"ZWEB_REDIS_PORT" envDefault:"6379"`
+	RedisPassword string `env:"ZWEB_REDIS_PASSWORD" envDefault:"zweb2022"`
+	RedisDatabase int    `env:"ZWEB_REDIS_DATABASE" envDefault:"0"`
 	// drive config
-	DriveType             string `env:"ILLA_DRIVE_TYPE"               envDefault:""`
-	DriveAccessKeyID      string `env:"ILLA_DRIVE_ACCESS_KEY_ID"      envDefault:""`
-	DriveAccessKeySecret  string `env:"ILLA_DRIVE_ACCESS_KEY_SECRET"  envDefault:""`
-	DriveRegion           string `env:"ILLA_DRIVE_REGION"             envDefault:""`
-	DriveEndpoint         string `env:"ILLA_DRIVE_ENDPOINT"           envDefault:""`
-	DriveSystemBucketName string `env:"ILLA_DRIVE_SYSTEM_BUCKET_NAME" envDefault:"illa-cloud"`
-	DriveTeamBucketName   string `env:"ILLA_DRIVE_TEAM_BUCKET_NAME"   envDefault:"illa-cloud-team"`
-	DriveUploadTimeoutRaw string `env:"ILLA_DRIVE_UPLOAD_TIMEOUT"     envDefault:"30s"`
+	DriveType             string `env:"ZWEB_DRIVE_TYPE"               envDefault:""`
+	DriveAccessKeyID      string `env:"ZWEB_DRIVE_ACCESS_KEY_ID"      envDefault:""`
+	DriveAccessKeySecret  string `env:"ZWEB_DRIVE_ACCESS_KEY_SECRET"  envDefault:""`
+	DriveRegion           string `env:"ZWEB_DRIVE_REGION"             envDefault:""`
+	DriveEndpoint         string `env:"ZWEB_DRIVE_ENDPOINT"           envDefault:""`
+	DriveSystemBucketName string `env:"ZWEB_DRIVE_SYSTEM_BUCKET_NAME" envDefault:"zweb-cloud"`
+	DriveTeamBucketName   string `env:"ZWEB_DRIVE_TEAM_BUCKET_NAME"   envDefault:"zweb-cloud-team"`
+	DriveUploadTimeoutRaw string `env:"ZWEB_DRIVE_UPLOAD_TIMEOUT"     envDefault:"30s"`
 	DriveUploadTimeout    time.Duration
 	// supervisor API
-	IllaSupervisorInternalRestAPI string `env:"ILLA_SUPERVISOR_INTERNAL_API"     envDefault:"http://127.0.0.1:9001/api/v1"`
+	ZWebSupervisorInternalRestAPI string `env:"ZWEB_SUPERVISOR_INTERNAL_API"     envDefault:"http://127.0.0.1:9001/api/v1"`
 
 	// peripheral API
-	IllaPeripheralAPI string `env:"ILLA_PERIPHERAL_API" envDefault:"https://peripheral-api.illasoft.com/v1/"`
+	ZWebPeripheralAPI string `env:"ZWEB_PERIPHERAL_API" envDefault:"https://peripheral-api.zilliangroup.com/v1/"`
 	// resource manager API
-	IllaResourceManagerRestAPI         string `env:"ILLA_RESOURCE_MANAGER_API"     envDefault:"http://illa-resource-manager-backend:8006"`
-	IllaResourceManagerInternalRestAPI string `env:"ILLA_RESOURCE_MANAGER_INTERNAL_API"     envDefault:"http://illa-resource-manager-backend-internal:9004"`
-	// illa marketplace config
-	IllaMarketplaceInternalRestAPI string `env:"ILLA_MARKETPLACE_INTERNAL_API"     envDefault:"http://illa-marketplace-backend-internal:9003/api/v1"`
+	ZWebResourceManagerRestAPI         string `env:"ZWEB_RESOURCE_MANAGER_API"     envDefault:"http://zweb-resource-manager-backend:8006"`
+	ZWebResourceManagerInternalRestAPI string `env:"ZWEB_RESOURCE_MANAGER_INTERNAL_API"     envDefault:"http://zweb-resource-manager-backend-internal:9004"`
+	// zweb marketplace config
+	ZWebMarketplaceInternalRestAPI string `env:"ZWEB_MARKETPLACE_INTERNAL_API"     envDefault:"http://zweb-marketplace-backend-internal:9003/api/v1"`
 	// token for internal api
-	ControlToken string `env:"ILLA_CONTROL_TOKEN"     envDefault:""`
+	ControlToken string `env:"ZWEB_CONTROL_TOKEN"     envDefault:""`
 	// google config
-	IllaGoogleSheetsClientID     string `env:"ILLA_GS_CLIENT_ID"           envDefault:""`
-	IllaGoogleSheetsClientSecret string `env:"ILLA_GS_CLIENT_SECRET"       envDefault:""`
-	IllaGoogleSheetsRedirectURI  string `env:"ILLA_GS_REDIRECT_URI"        envDefault:""`
+	ZWebGoogleSheetsClientID     string `env:"ZWEB_GS_CLIENT_ID"           envDefault:""`
+	ZWebGoogleSheetsClientSecret string `env:"ZWEB_GS_CLIENT_SECRET"       envDefault:""`
+	ZWebGoogleSheetsRedirectURI  string `env:"ZWEB_GS_REDIRECT_URI"        envDefault:""`
 }
 
 func getConfig() (*Config, error) {
@@ -271,34 +271,34 @@ func (c *Config) GetControlToken() string {
 	return c.ControlToken
 }
 
-func (c *Config) GetIllaSupervisorInternalRestAPI() string {
-	return c.IllaSupervisorInternalRestAPI
+func (c *Config) GetZWebSupervisorInternalRestAPI() string {
+	return c.ZWebSupervisorInternalRestAPI
 }
 
-func (c *Config) GetIllaPeripheralAPI() string {
-	return c.IllaPeripheralAPI
+func (c *Config) GetZWebPeripheralAPI() string {
+	return c.ZWebPeripheralAPI
 }
 
-func (c *Config) GetIllaResourceManagerRestAPI() string {
-	return c.IllaResourceManagerRestAPI
+func (c *Config) GetZWebResourceManagerRestAPI() string {
+	return c.ZWebResourceManagerRestAPI
 }
 
-func (c *Config) GetIllaResourceManagerInternalRestAPI() string {
-	return c.IllaResourceManagerInternalRestAPI
+func (c *Config) GetZWebResourceManagerInternalRestAPI() string {
+	return c.ZWebResourceManagerInternalRestAPI
 }
 
-func (c *Config) GetIllaMarketplaceInternalRestAPI() string {
-	return c.IllaMarketplaceInternalRestAPI
+func (c *Config) GetZWebMarketplaceInternalRestAPI() string {
+	return c.ZWebMarketplaceInternalRestAPI
 }
 
-func (c *Config) GetIllaGoogleSheetsClientID() string {
-	return c.IllaGoogleSheetsClientID
+func (c *Config) GetZWebGoogleSheetsClientID() string {
+	return c.ZWebGoogleSheetsClientID
 }
 
-func (c *Config) GetIllaGoogleSheetsClientSecret() string {
-	return c.IllaGoogleSheetsClientSecret
+func (c *Config) GetZWebGoogleSheetsClientSecret() string {
+	return c.ZWebGoogleSheetsClientSecret
 }
 
-func (c *Config) GetIllaGoogleSheetsRedirectURI() string {
-	return c.IllaGoogleSheetsRedirectURI
+func (c *Config) GetZWebGoogleSheetsRedirectURI() string {
+	return c.ZWebGoogleSheetsRedirectURI
 }

@@ -1,4 +1,4 @@
-package illacloudperipheralapisdk
+package zilliangroupperipheralapisdk
 
 import (
 	"errors"

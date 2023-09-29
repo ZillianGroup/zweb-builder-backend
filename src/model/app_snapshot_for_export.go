@@ -3,7 +3,7 @@ package model
 import (
 	"time"
 
-	"github.com/illacloud/builder-backend/src/utils/idconvertor"
+	"github.com/zilliangroup/builder-backend/src/utils/idconvertor"
 )
 
 type AppSnapshotForExport struct {

@@ -1,4 +1,4 @@
-// Copyright 2023 Illa Soft, Inc.
+// Copyright 2023 ZWeb Soft, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ type AuditLogger struct {
 	db *gorm.DB
 }
 
-const ILLA_DEPLOY_MODE_CLOUD = "cloud"
+const ZWEB_DEPLOY_MODE_CLOUD = "cloud"
 
 func GetInstance() *AuditLogger {
 	once.Do(func() {
@@ -50,15 +50,15 @@ func GetInstance() *AuditLogger {
 }
 
 type Config struct {
-	Addr     string `env:"ILLA_AUDIT_PG_ADDR" envDefault:"localhost"`
-	Port     string `env:"ILLA_AUDIT_PG_PORT" envDefault:"5432"`
-	User     string `env:"ILLA_AUDIT_PG_USER" envDefault:"illa_supervisor"`
-	Password string `env:"ILLA_AUDIT_PG_PASSWORD" envDefault:"71De5JllWSetLYU"`
-	Database string `env:"ILLA_AUDIT_PG_DATABASE" envDefault:"illa_supervisor"`
+	Addr     string `env:"ZWEB_AUDIT_PG_ADDR" envDefault:"localhost"`
+	Port     string `env:"ZWEB_AUDIT_PG_PORT" envDefault:"5432"`
+	User     string `env:"ZWEB_AUDIT_PG_USER" envDefault:"zweb_supervisor"`
+	Password string `env:"ZWEB_AUDIT_PG_PASSWORD" envDefault:"71De5JllWSetLYU"`
+	Database string `env:"ZWEB_AUDIT_PG_DATABASE" envDefault:"zweb_supervisor"`
 }
 
 func getLogger() (*AuditLogger, error) {
-	if os.Getenv("ILLA_DEPLOY_MODE") != ILLA_DEPLOY_MODE_CLOUD {
+	if os.Getenv("ZWEB_DEPLOY_MODE") != ZWEB_DEPLOY_MODE_CLOUD {
 		return &AuditLogger{db: nil}, nil
 	}
 	config := &Config{}

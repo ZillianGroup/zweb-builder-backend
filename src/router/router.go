@@ -2,8 +2,8 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/illacloud/builder-backend/src/controller"
-	"github.com/illacloud/builder-backend/src/utils/remotejwtauth"
+	"github.com/zilliangroup/builder-backend/src/controller"
+	"github.com/zilliangroup/builder-backend/src/utils/remotejwtauth"
 )
 
 type Router struct {

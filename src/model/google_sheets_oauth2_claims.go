@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
-	"github.com/illacloud/builder-backend/src/request"
-	"github.com/illacloud/builder-backend/src/utils/config"
+	"github.com/zilliangroup/builder-backend/src/request"
+	"github.com/zilliangroup/builder-backend/src/utils/config"
 )
 
 type GoogleSheetsOAuth2Claims struct {
@@ -45,7 +45,7 @@ func GenerateGoogleSheetsOAuth2Token(teamID int, userID int, resourceID int, cre
 		Access:   accessType,
 		URL:      createOAuthTokenRequest.ExportRedirectURL(),
 		RegisteredClaims: jwt.RegisteredClaims{
-			Issuer: "ILLA",
+			Issuer: "ZWEB",
 			ExpiresAt: &jwt.NumericDate{
 				Time: time.Now().Add(time.Minute * 1),
 			},

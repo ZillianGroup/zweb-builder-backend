@@ -1,4 +1,4 @@
-package illaresourcemanagersdk
+package zwebresourcemanagersdk
 
 import (
 	"errors"

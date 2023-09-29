@@ -1,18 +1,18 @@
 package redis
 
 import (
-	"github.com/illacloud/builder-backend/src/utils/config"
 	redis "github.com/redis/go-redis/v9"
+	"github.com/zilliangroup/builder-backend/src/utils/config"
 	"go.uber.org/zap"
 )
 
 const RETRY_TIMES = 6
 
 type RedisConfig struct {
-	Addr     string `env:"ILLA_REDIS_ADDR" envDefault:"localhost"`
-	Port     string `env:"ILLA_REDIS_PORT" envDefault:"6379"`
-	Password string `env:"ILLA_REDIS_PASSWORD" envDefault:"illa2022"`
-	Database int    `env:"ILLA_REDIS_DATABASE" envDefault:"0"`
+	Addr     string `env:"ZWEB_REDIS_ADDR" envDefault:"localhost"`
+	Port     string `env:"ZWEB_REDIS_PORT" envDefault:"6379"`
+	Password string `env:"ZWEB_REDIS_PASSWORD" envDefault:"zweb2022"`
+	Database int    `env:"ZWEB_REDIS_DATABASE" envDefault:"0"`
 }
 
 func NewRedisConnectionByGlobalConfig(config *config.Config, logger *zap.SugaredLogger) (*redis.Client, error) {

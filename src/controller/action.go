@@ -11,11 +11,11 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"github.com/illacloud/builder-backend/src/model"
-	"github.com/illacloud/builder-backend/src/request"
-	"github.com/illacloud/builder-backend/src/response"
-	"github.com/illacloud/builder-backend/src/utils/accesscontrol"
-	"github.com/illacloud/builder-backend/src/utils/illaresourcemanagersdk"
+	"github.com/zilliangroup/builder-backend/src/model"
+	"github.com/zilliangroup/builder-backend/src/request"
+	"github.com/zilliangroup/builder-backend/src/response"
+	"github.com/zilliangroup/builder-backend/src/utils/accesscontrol"
+	"github.com/zilliangroup/builder-backend/src/utils/zwebresourcemanagersdk"
 )
 
 func (controller *Controller) CreateAction(c *gin.Context) {
@@ -54,7 +54,7 @@ func (controller *Controller) CreateAction(c *gin.Context) {
 
 	// append remote virtual resource (like aiagent, but the transformet is local virtual resource)
 	if createActionRequest.IsRemoteVirtualAction() {
-		api, errInNewAPI := illaresourcemanagersdk.NewIllaResourceManagerRestAPI()
+		api, errInNewAPI := zwebresourcemanagersdk.NewZWebResourceManagerRestAPI()
 		if errInNewAPI != nil {
 			controller.FeedbackBadRequest(c, ERROR_FLAG_CAN_NOT_CREATE_ACTION, "error in fetch action mapped virtual resource: "+errInNewAPI.Error())
 			return
@@ -143,7 +143,7 @@ func (controller *Controller) UpdateAction(c *gin.Context) {
 
 	// append remote virtual resource (like aiagent, but the transformet is local virtual resource)
 	if updateActionRequest.IsRemoteVirtualAction() {
-		api, errInNewAPI := illaresourcemanagersdk.NewIllaResourceManagerRestAPI()
+		api, errInNewAPI := zwebresourcemanagersdk.NewZWebResourceManagerRestAPI()
 		if errInNewAPI != nil {
 			controller.FeedbackBadRequest(c, ERROR_FLAG_CAN_NOT_CREATE_ACTION, "error in fetch action mapped virtual resource: "+errInNewAPI.Error())
 			return
@@ -274,7 +274,7 @@ func (controller *Controller) GetAction(c *gin.Context) {
 
 	// append remote virtual resource
 	if action.IsRemoteVirtualAction() {
-		api, errInNewAPI := illaresourcemanagersdk.NewIllaResourceManagerRestAPI()
+		api, errInNewAPI := zwebresourcemanagersdk.NewZWebResourceManagerRestAPI()
 		if errInNewAPI != nil {
 			controller.FeedbackBadRequest(c, ERROR_FLAG_CAN_NOT_UPDATE_ACTION, "error in fetch action mapped virtual resource: "+errInNewAPI.Error())
 			return
@@ -322,8 +322,8 @@ func (controller *Controller) RunAction(c *gin.Context) {
 
 	// set resource timing header
 	// @see:
-	// [Timing-Allow-Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin)
-	// [Resource_timing](https://developer.mozilla.org/en-US/docs/Web/API/Performance_API/Resource_timing)
+	// [Timing-Allow-Origin](https://developer.mozzweb.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin)
+	// [Resource_timing](https://developer.mozzweb.org/en-US/docs/Web/API/Performance_API/Resource_timing)
 	c.Header("Timing-Allow-Origin", "*")
 
 	// execute

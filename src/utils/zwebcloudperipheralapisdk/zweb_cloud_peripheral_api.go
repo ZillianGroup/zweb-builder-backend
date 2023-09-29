@@ -1,4 +1,4 @@
-package illacloudperipheralapisdk
+package zilliangroupperipheralapisdk
 
 import (
 	"encoding/json"
@@ -6,29 +6,29 @@ import (
 	"net/http"
 
 	"github.com/go-resty/resty/v2"
-	"github.com/illacloud/builder-backend/src/utils/config"
+	"github.com/zilliangroup/builder-backend/src/utils/config"
 )
 
 const (
 	PERIPHERAL_API_GENERATE_SQL_PATH = "generateSQL"
 )
 
-type IllaCloudPeriphearalAPI struct {
+type ZWebCloudPeriphearalAPI struct {
 	Config *config.Config
 }
 
-func NewIllaCloudPeriphearalAPI() *IllaCloudPeriphearalAPI {
-	return &IllaCloudPeriphearalAPI{
+func NewZWebCloudPeriphearalAPI() *ZWebCloudPeriphearalAPI {
+	return &ZWebCloudPeriphearalAPI{
 		Config: config.GetInstance(),
 	}
 }
 
-func (i *IllaCloudPeriphearalAPI) GenerateSQL(m *GenerateSQLPeripheralRequest) (*GenerateSQLFeedback, error) {
+func (i *ZWebCloudPeriphearalAPI) GenerateSQL(m *GenerateSQLPeripheralRequest) (*GenerateSQLFeedback, error) {
 	payload := m.Export()
 	client := resty.New()
 	resp, err := client.R().
 		SetBody(payload).
-		Post(i.Config.GetIllaPeripheralAPI() + PERIPHERAL_API_GENERATE_SQL_PATH)
+		Post(i.Config.GetZWebPeripheralAPI() + PERIPHERAL_API_GENERATE_SQL_PATH)
 	if resp.StatusCode() != http.StatusOK || err != nil {
 		return nil, errors.New("failed to generate SQL")
 	}

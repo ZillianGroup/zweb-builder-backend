@@ -6,11 +6,11 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
-	"github.com/illacloud/builder-backend/src/model"
-	"github.com/illacloud/builder-backend/src/request"
-	"github.com/illacloud/builder-backend/src/utils/accesscontrol"
-	"github.com/illacloud/builder-backend/src/utils/auditlogger"
-	"github.com/illacloud/builder-backend/src/utils/illacloudperipheralapisdk"
+	"github.com/zilliangroup/builder-backend/src/model"
+	"github.com/zilliangroup/builder-backend/src/request"
+	"github.com/zilliangroup/builder-backend/src/utils/accesscontrol"
+	"github.com/zilliangroup/builder-backend/src/utils/auditlogger"
+	"github.com/zilliangroup/builder-backend/src/utils/zilliangroupperipheralapisdk"
 )
 
 func (controller *Controller) GenerateSQL(c *gin.Context) {
@@ -106,14 +106,14 @@ func (controller *Controller) GenerateSQL(c *gin.Context) {
 	}
 
 	// form request payload
-	generateSQLPeripheralRequest, errInNewReq := illacloudperipheralapisdk.NewGenerateSQLPeripheralRequest(resource.ExportTypeInString(), resourceMetaInfo, generateSQLRequest.Description, generateSQLRequest.GetActionInString())
+	generateSQLPeripheralRequest, errInNewReq := zilliangroupperipheralapisdk.NewGenerateSQLPeripheralRequest(resource.ExportTypeInString(), resourceMetaInfo, generateSQLRequest.Description, generateSQLRequest.GetActionInString())
 	if errInNewReq != nil {
 		controller.FeedbackBadRequest(c, ERROR_FLAG_GENERATE_SQL_FAILED, "generate request failed: "+errInNewReq.Error())
 		return
 	}
 
 	// call remote generate sql API
-	peripheralAPI := illacloudperipheralapisdk.NewIllaCloudPeriphearalAPI()
+	peripheralAPI := zilliangroupperipheralapisdk.NewZWebCloudPeriphearalAPI()
 	generateSQLResponse, errInGGenerateSQL := peripheralAPI.GenerateSQL(generateSQLPeripheralRequest)
 	if errInGGenerateSQL != nil {
 		controller.FeedbackBadRequest(c, ERROR_FLAG_GENERATE_SQL_FAILED, "generate sql failed: "+errInGGenerateSQL.Error())

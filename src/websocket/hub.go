@@ -1,4 +1,4 @@
-// Copyright 2022 The ILLA Authors.
+// Copyright 2022 The ZWEB Authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,8 +18,8 @@ import (
 	"errors"
 
 	"github.com/google/uuid"
-	"github.com/illacloud/builder-backend/src/storage"
-	"github.com/illacloud/builder-backend/src/utils/accesscontrol"
+	"github.com/zilliangroup/builder-backend/src/storage"
+	"github.com/zilliangroup/builder-backend/src/utils/accesscontrol"
 )
 
 // clients hub, maintains active clients and broadcast messags.

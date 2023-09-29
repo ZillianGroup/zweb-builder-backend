@@ -1,12 +1,12 @@
-package illaresourcemanagersdk
+package zwebresourcemanagersdk
 
 import (
 	"errors"
 	"fmt"
 	"strconv"
 
-	"github.com/illacloud/builder-backend/src/utils/idconvertor"
-	"github.com/illacloud/builder-backend/src/utils/tokenvalidator"
+	"github.com/zilliangroup/builder-backend/src/utils/idconvertor"
+	"github.com/zilliangroup/builder-backend/src/utils/tokenvalidator"
 )
 
 const (

@@ -1,4 +1,4 @@
-// Copyright 2023 Illa Soft, Inc.
+// Copyright 2023 ZWeb Soft, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,8 +18,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/illacloud/builder-backend/src/actionruntime/common"
-	parser_sql "github.com/illacloud/builder-backend/src/utils/parser/sql"
+	"github.com/zilliangroup/builder-backend/src/actionruntime/common"
+	parser_sql "github.com/zilliangroup/builder-backend/src/utils/parser/sql"
 
 	"github.com/go-playground/validator/v10"
 	mssql "github.com/microsoft/go-mssqldb"

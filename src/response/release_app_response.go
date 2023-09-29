@@ -3,7 +3,7 @@ package response
 import (
 	"fmt"
 
-	"github.com/illacloud/builder-backend/src/model"
+	"github.com/zilliangroup/builder-backend/src/model"
 )
 
 type ReleaseAppResponse struct {

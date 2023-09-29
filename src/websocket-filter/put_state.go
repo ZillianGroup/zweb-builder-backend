@@ -1,4 +1,4 @@
-// Copyright 2022 The ILLA Authors.
+// Copyright 2022 The ZWEB Authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,10 +17,10 @@ package filter
 import (
 	"errors"
 
-	"github.com/illacloud/builder-backend/src/model"
-	"github.com/illacloud/builder-backend/src/websocket"
+	"github.com/zilliangroup/builder-backend/src/model"
+	"github.com/zilliangroup/builder-backend/src/websocket"
 
-	"github.com/illacloud/builder-backend/src/utils/builderoperation"
+	"github.com/zilliangroup/builder-backend/src/utils/builderoperation"
 )
 
 func SignalPutState(hub *websocket.Hub, message *websocket.Message) error {

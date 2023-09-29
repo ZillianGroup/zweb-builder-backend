@@ -10,14 +10,14 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
-	"github.com/illacloud/builder-backend/src/model"
-	"github.com/illacloud/builder-backend/src/request"
-	"github.com/illacloud/builder-backend/src/response"
-	"github.com/illacloud/builder-backend/src/storage"
-	"github.com/illacloud/builder-backend/src/utils/accesscontrol"
-	"github.com/illacloud/builder-backend/src/utils/auditlogger"
-	"github.com/illacloud/builder-backend/src/utils/datacontrol"
-	"github.com/illacloud/builder-backend/src/utils/illamarketplacesdk"
+	"github.com/zilliangroup/builder-backend/src/model"
+	"github.com/zilliangroup/builder-backend/src/request"
+	"github.com/zilliangroup/builder-backend/src/response"
+	"github.com/zilliangroup/builder-backend/src/storage"
+	"github.com/zilliangroup/builder-backend/src/utils/accesscontrol"
+	"github.com/zilliangroup/builder-backend/src/utils/auditlogger"
+	"github.com/zilliangroup/builder-backend/src/utils/datacontrol"
+	"github.com/zilliangroup/builder-backend/src/utils/zwebmarketplacesdk"
 )
 
 func (controller *Controller) CreateApp(c *gin.Context) {
@@ -153,9 +153,9 @@ func (controller *Controller) DeleteApp(c *gin.Context) {
 	// add counter to marketpalce
 	go func() {
 		defer wg.Done()
-		marketplaceAPI := illamarketplacesdk.NewIllaMarketplaceRestAPI()
+		marketplaceAPI := zwebmarketplacesdk.NewZWebMarketplaceRestAPI()
 		marketplaceAPI.OpenDebug()
-		errInDeleteProduct := marketplaceAPI.DeleteProduct(illamarketplacesdk.PRODUCT_TYPE_APPS, appID)
+		errInDeleteProduct := marketplaceAPI.DeleteProduct(zwebmarketplacesdk.PRODUCT_TYPE_APPS, appID)
 		if errInDeleteProduct != nil {
 			log.Printf("[DUMP] DeleteApp.errInDeleteProduct: %+v\n", errInDeleteProduct)
 		}
@@ -855,8 +855,8 @@ func (controller *Controller) ReleaseApp(c *gin.Context) {
 		// add counter to marketpalce
 		go func() {
 			defer wg.Done()
-			marketplaceAPI := illamarketplacesdk.NewIllaMarketplaceRestAPI()
-			marketplaceAPI.UpdateProduct(illamarketplacesdk.PRODUCT_TYPE_APPS, appID, illamarketplacesdk.NewAppForMarketplace(app))
+			marketplaceAPI := zwebmarketplacesdk.NewZWebMarketplaceRestAPI()
+			marketplaceAPI.UpdateProduct(zwebmarketplacesdk.PRODUCT_TYPE_APPS, appID, zwebmarketplacesdk.NewAppForMarketplace(app))
 		}()
 
 	}
@@ -1242,8 +1242,8 @@ func (controller *Controller) ForkMarketplaceApp(c *gin.Context) {
 	// add counter to marketpalce
 	go func() {
 		defer wg.Done()
-		marketplaceAPI := illamarketplacesdk.NewIllaMarketplaceRestAPI()
-		marketplaceAPI.ForkCounter(illamarketplacesdk.PRODUCT_TYPE_APPS, appID)
+		marketplaceAPI := zwebmarketplacesdk.NewZWebMarketplaceRestAPI()
+		marketplaceAPI.ForkCounter(zwebmarketplacesdk.PRODUCT_TYPE_APPS, appID)
 	}()
 
 	// audit log
