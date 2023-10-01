@@ -6,10 +6,10 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
-	"github.com/zilliangroup/builder-backend/src/model"
-	"github.com/zilliangroup/builder-backend/src/request"
-	"github.com/zilliangroup/builder-backend/src/response"
-	"github.com/zilliangroup/builder-backend/src/utils/datacontrol"
+	"github.com/zilliangroup/zweb-builder-backend/src/model"
+	"github.com/zilliangroup/zweb-builder-backend/src/request"
+	"github.com/zilliangroup/zweb-builder-backend/src/response"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/datacontrol"
 )
 
 // hold publish or remove from marketplace

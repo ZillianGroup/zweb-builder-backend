@@ -3,7 +3,7 @@ package response
 import (
 	"fmt"
 
-	"github.com/zilliangroup/builder-backend/src/model"
+	"github.com/zilliangroup/zweb-builder-backend/src/model"
 )
 
 type ReleaseAppResponse struct {

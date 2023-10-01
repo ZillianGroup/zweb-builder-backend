@@ -15,10 +15,10 @@
 package controller
 
 import (
-	"github.com/zilliangroup/builder-backend/src/model"
-	"github.com/zilliangroup/builder-backend/src/response"
-	"github.com/zilliangroup/builder-backend/src/utils/accesscontrol"
-	"github.com/zilliangroup/builder-backend/src/utils/config"
+	"github.com/zilliangroup/zweb-builder-backend/src/model"
+	"github.com/zilliangroup/zweb-builder-backend/src/response"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/accesscontrol"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/config"
 
 	"github.com/gin-gonic/gin"
 )

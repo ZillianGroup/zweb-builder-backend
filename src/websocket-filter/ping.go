@@ -17,7 +17,7 @@ package filter
 import (
 	"errors"
 
-	"github.com/zilliangroup/builder-backend/src/websocket"
+	"github.com/zilliangroup/zweb-builder-backend/src/websocket"
 )
 
 func SignalPing(hub *websocket.Hub, message *websocket.Message) error {

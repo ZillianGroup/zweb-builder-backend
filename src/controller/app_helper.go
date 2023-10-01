@@ -19,10 +19,10 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/zilliangroup/builder-backend/src/model"
-	"github.com/zilliangroup/builder-backend/src/utils/datacontrol"
-	"github.com/zilliangroup/builder-backend/src/utils/resourcelist"
-	"github.com/zilliangroup/builder-backend/src/utils/zwebresourcemanagersdk"
+	"github.com/zilliangroup/zweb-builder-backend/src/model"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/datacontrol"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/resourcelist"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/zwebresourcemanagersdk"
 
 	"github.com/gin-gonic/gin"
 )

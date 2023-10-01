@@ -6,7 +6,7 @@ import (
 
 	"crypto/md5"
 
-	"github.com/zilliangroup/builder-backend/src/utils/config"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/config"
 )
 
 type RequestTokenValidator struct {

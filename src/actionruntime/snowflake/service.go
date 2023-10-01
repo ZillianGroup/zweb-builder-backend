@@ -20,8 +20,8 @@ import (
 
 	"github.com/go-playground/validator/v10"
 	"github.com/mitchellh/mapstructure"
-	"github.com/zilliangroup/builder-backend/src/actionruntime/common"
-	parser_sql "github.com/zilliangroup/builder-backend/src/utils/parser/sql"
+	"github.com/zilliangroup/zweb-builder-backend/src/actionruntime/common"
+	parser_sql "github.com/zilliangroup/zweb-builder-backend/src/utils/parser/sql"
 )
 
 type Connector struct {

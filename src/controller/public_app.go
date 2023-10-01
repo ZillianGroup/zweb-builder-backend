@@ -3,11 +3,11 @@ package controller
 import (
 	"fmt"
 
-	"github.com/zilliangroup/builder-backend/src/model"
-	"github.com/zilliangroup/builder-backend/src/response"
-	"github.com/zilliangroup/builder-backend/src/utils/accesscontrol"
-	"github.com/zilliangroup/builder-backend/src/utils/auditlogger"
-	"github.com/zilliangroup/builder-backend/src/utils/datacontrol"
+	"github.com/zilliangroup/zweb-builder-backend/src/model"
+	"github.com/zilliangroup/zweb-builder-backend/src/response"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/accesscontrol"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/auditlogger"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/datacontrol"
 
 	"github.com/gin-gonic/gin"
 )

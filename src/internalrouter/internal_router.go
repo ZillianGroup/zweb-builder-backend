@@ -2,7 +2,7 @@ package internalrouter
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/zilliangroup/builder-backend/src/controller"
+	"github.com/zilliangroup/zweb-builder-backend/src/controller"
 )
 
 type Router struct {

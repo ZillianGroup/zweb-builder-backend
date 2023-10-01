@@ -7,8 +7,8 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	"github.com/zilliangroup/builder-backend/src/response"
-	"github.com/zilliangroup/builder-backend/src/utils/idconvertor"
+	"github.com/zilliangroup/zweb-builder-backend/src/response"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/idconvertor"
 )
 
 const (

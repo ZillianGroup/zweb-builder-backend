@@ -1,7 +1,7 @@
 package request
 
 import (
-	"github.com/zilliangroup/builder-backend/src/utils/idconvertor"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/idconvertor"
 )
 
 const GENERATE_SQL_ACTION_SELECT = 1

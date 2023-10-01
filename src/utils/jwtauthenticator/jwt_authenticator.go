@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
-	"github.com/zilliangroup/builder-backend/src/utils/config"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/config"
 )
 
 const JWT_ISSUER = "ZWEB Cloud"

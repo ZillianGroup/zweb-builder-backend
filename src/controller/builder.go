@@ -17,8 +17,8 @@ package controller
 import (
 	"time"
 
-	"github.com/zilliangroup/builder-backend/src/response"
-	"github.com/zilliangroup/builder-backend/src/utils/accesscontrol"
+	"github.com/zilliangroup/zweb-builder-backend/src/response"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/accesscontrol"
 
 	"github.com/gin-gonic/gin"
 )

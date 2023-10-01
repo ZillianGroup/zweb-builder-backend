@@ -18,8 +18,8 @@ import (
 	"log"
 
 	proto "github.com/golang/protobuf/proto"
-	"github.com/zilliangroup/builder-backend/src/utils/builderoperation"
-	"github.com/zilliangroup/builder-backend/src/websocket"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/builderoperation"
+	"github.com/zilliangroup/zweb-builder-backend/src/websocket"
 )
 
 func Run(hub *websocket.Hub) {

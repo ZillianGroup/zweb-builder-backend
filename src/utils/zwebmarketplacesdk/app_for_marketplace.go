@@ -1,6 +1,6 @@
 package zwebmarketplacesdk
 
-import "github.com/zilliangroup/builder-backend/src/model"
+import "github.com/zilliangroup/zweb-builder-backend/src/model"
 
 type AppForMarketplace struct {
 	Name        string `json:"name"`

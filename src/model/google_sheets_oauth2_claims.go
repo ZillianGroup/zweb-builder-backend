@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
-	"github.com/zilliangroup/builder-backend/src/request"
-	"github.com/zilliangroup/builder-backend/src/utils/config"
+	"github.com/zilliangroup/zweb-builder-backend/src/request"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/config"
 )
 
 type GoogleSheetsOAuth2Claims struct {

@@ -27,7 +27,7 @@ import (
 	"github.com/go-resty/resty/v2"
 	"github.com/icholy/digest"
 	"github.com/mitchellh/mapstructure"
-	"github.com/zilliangroup/builder-backend/src/actionruntime/common"
+	"github.com/zilliangroup/zweb-builder-backend/src/actionruntime/common"
 )
 
 type RESTAPIConnector struct {

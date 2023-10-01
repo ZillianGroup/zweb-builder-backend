@@ -1,7 +1,7 @@
 package websocket
 
 import (
-	"github.com/zilliangroup/builder-backend/src/model"
+	"github.com/zilliangroup/zweb-builder-backend/src/model"
 )
 
 const DEFAULT_ROOM_SLOT = 0

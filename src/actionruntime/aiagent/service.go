@@ -18,8 +18,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/zilliangroup/builder-backend/src/actionruntime/common"
-	resourcemanager "github.com/zilliangroup/builder-backend/src/utils/zwebresourcemanagersdk"
+	"github.com/zilliangroup/zweb-builder-backend/src/actionruntime/common"
+	resourcemanager "github.com/zilliangroup/zweb-builder-backend/src/utils/zwebresourcemanagersdk"
 )
 
 type AIAgentConnector struct {

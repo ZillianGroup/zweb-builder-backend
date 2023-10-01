@@ -1,7 +1,7 @@
 package response
 
 import (
-	"github.com/zilliangroup/builder-backend/src/model"
+	"github.com/zilliangroup/zweb-builder-backend/src/model"
 )
 
 type GetSnapshotListResponse struct {

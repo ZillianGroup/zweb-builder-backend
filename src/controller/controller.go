@@ -1,10 +1,10 @@
 package controller
 
 import (
-	"github.com/zilliangroup/builder-backend/src/drive"
-	"github.com/zilliangroup/builder-backend/src/storage"
-	"github.com/zilliangroup/builder-backend/src/utils/accesscontrol"
-	"github.com/zilliangroup/builder-backend/src/utils/tokenvalidator"
+	"github.com/zilliangroup/zweb-builder-backend/src/drive"
+	"github.com/zilliangroup/zweb-builder-backend/src/storage"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/accesscontrol"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/tokenvalidator"
 )
 
 type Controller struct {

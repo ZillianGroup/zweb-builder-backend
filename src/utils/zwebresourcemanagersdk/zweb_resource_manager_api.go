@@ -9,9 +9,9 @@ import (
 	"strconv"
 
 	"github.com/go-resty/resty/v2"
-	"github.com/zilliangroup/builder-backend/src/utils/config"
-	"github.com/zilliangroup/builder-backend/src/utils/resourcelist"
-	"github.com/zilliangroup/builder-backend/src/utils/tokenvalidator"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/config"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/resourcelist"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/tokenvalidator"
 )
 
 const (

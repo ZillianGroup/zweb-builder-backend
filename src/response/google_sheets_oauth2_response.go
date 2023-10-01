@@ -3,8 +3,8 @@ package response
 import (
 	"net/url"
 
-	"github.com/zilliangroup/builder-backend/src/model"
-	"github.com/zilliangroup/builder-backend/src/utils/config"
+	"github.com/zilliangroup/zweb-builder-backend/src/model"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/config"
 )
 
 type GoogleSheetsOAuth2Response struct {

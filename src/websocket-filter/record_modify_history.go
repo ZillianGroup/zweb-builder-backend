@@ -1,9 +1,9 @@
 package filter
 
 import (
-	"github.com/zilliangroup/builder-backend/src/model"
-	"github.com/zilliangroup/builder-backend/src/utils/config"
-	"github.com/zilliangroup/builder-backend/src/websocket"
+	"github.com/zilliangroup/zweb-builder-backend/src/model"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/config"
+	"github.com/zilliangroup/zweb-builder-backend/src/websocket"
 )
 
 func RecordModifyHistory(hub *websocket.Hub, message *websocket.Message, displayNames []string) error {

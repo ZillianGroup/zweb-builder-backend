@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/zilliangroup/builder-backend/src/model"
+	"github.com/zilliangroup/zweb-builder-backend/src/model"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
 )

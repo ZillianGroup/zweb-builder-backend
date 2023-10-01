@@ -18,8 +18,8 @@ import (
 	"errors"
 
 	"github.com/google/uuid"
-	"github.com/zilliangroup/builder-backend/src/storage"
-	"github.com/zilliangroup/builder-backend/src/utils/accesscontrol"
+	"github.com/zilliangroup/zweb-builder-backend/src/storage"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/accesscontrol"
 )
 
 // clients hub, maintains active clients and broadcast messags.

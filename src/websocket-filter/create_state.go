@@ -17,10 +17,10 @@ package filter
 import (
 	"errors"
 
-	"github.com/zilliangroup/builder-backend/src/model"
-	"github.com/zilliangroup/builder-backend/src/websocket"
+	"github.com/zilliangroup/zweb-builder-backend/src/model"
+	"github.com/zilliangroup/zweb-builder-backend/src/websocket"
 
-	"github.com/zilliangroup/builder-backend/src/utils/builderoperation"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/builderoperation"
 )
 
 func SignalCreateState(hub *websocket.Hub, message *websocket.Message) error {

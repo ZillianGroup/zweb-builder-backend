@@ -22,7 +22,7 @@ import (
 
 	"github.com/go-playground/validator/v10"
 	"github.com/mitchellh/mapstructure"
-	"github.com/zilliangroup/builder-backend/src/actionruntime/common"
+	"github.com/zilliangroup/zweb-builder-backend/src/actionruntime/common"
 	"gopkg.in/gomail.v2"
 )
 

@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/zilliangroup/builder-backend/src/utils/idconvertor"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/idconvertor"
 )
 
 const CUSTOMIZATION_LANGUAGE_EN_US = "en-US"

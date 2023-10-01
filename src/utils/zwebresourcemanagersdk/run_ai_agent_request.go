@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/zilliangroup/builder-backend/src/utils/idconvertor"
-	"github.com/zilliangroup/builder-backend/src/utils/tokenvalidator"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/idconvertor"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/tokenvalidator"
 )
 
 const (

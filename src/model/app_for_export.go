@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/zilliangroup/builder-backend/src/utils/idconvertor"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/idconvertor"
 )
 
 type AppActivity struct {

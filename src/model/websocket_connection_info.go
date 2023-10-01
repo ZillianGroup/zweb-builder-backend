@@ -3,8 +3,8 @@ package model
 import (
 	"fmt"
 
-	"github.com/zilliangroup/builder-backend/src/utils/config"
-	"github.com/zilliangroup/builder-backend/src/utils/idconvertor"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/config"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/idconvertor"
 )
 
 const PROTOCOL_WEBSOCKET = "ws"

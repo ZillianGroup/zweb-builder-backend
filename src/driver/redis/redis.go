@@ -2,7 +2,7 @@ package redis
 
 import (
 	redis "github.com/redis/go-redis/v9"
-	"github.com/zilliangroup/builder-backend/src/utils/config"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/config"
 	"go.uber.org/zap"
 )
 

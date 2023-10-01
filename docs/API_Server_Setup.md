@@ -29,7 +29,7 @@ This document explains how you can setup a development environment for `ZWEB Bui
 4. Running the ZWEB Builder API server
 
     ```bash
-    go run github.com/zilliangroup/builder-backend/cmd/http-server
+    go run github.com/zilliangroup/zweb-builder-backend/cmd/http-server
     ```
 
    This will start the ZWEB Builder API server on  `http://127.0.0.1:8001`.

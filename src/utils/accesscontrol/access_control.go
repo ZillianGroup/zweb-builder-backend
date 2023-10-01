@@ -1,7 +1,7 @@
 package accesscontrol
 
 import (
-	"github.com/zilliangroup/builder-backend/src/utils/supervisor"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/supervisor"
 )
 
 // default

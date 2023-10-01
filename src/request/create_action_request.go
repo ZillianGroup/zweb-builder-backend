@@ -3,8 +3,8 @@ package request
 import (
 	"encoding/json"
 
-	"github.com/zilliangroup/builder-backend/src/utils/idconvertor"
-	"github.com/zilliangroup/builder-backend/src/utils/resourcelist"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/idconvertor"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/resourcelist"
 )
 
 // The create action HTTP request body like:

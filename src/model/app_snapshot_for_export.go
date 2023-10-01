@@ -3,7 +3,7 @@ package model
 import (
 	"time"
 
-	"github.com/zilliangroup/builder-backend/src/utils/idconvertor"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/idconvertor"
 )
 
 type AppSnapshotForExport struct {

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/zilliangroup/builder-backend/src/utils/config"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/config"
 
 	"go.uber.org/zap"
 	"gorm.io/driver/postgres"

@@ -2,8 +2,8 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/zilliangroup/builder-backend/src/controller"
-	"github.com/zilliangroup/builder-backend/src/utils/remotejwtauth"
+	"github.com/zilliangroup/zweb-builder-backend/src/controller"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/remotejwtauth"
 )
 
 type Router struct {

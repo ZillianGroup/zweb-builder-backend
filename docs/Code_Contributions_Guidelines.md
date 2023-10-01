@@ -12,7 +12,7 @@ We use [Github Flow](https://guides.github.com/introduction/flow/index.html), so
 1. Fork the repo and create a new branch from the `develop` branch.
 2. Branches are named as `fix/fix-name` or `feature/feature-name`
 3. Please test your changes.
-4. Once you are confident in your code changes, create a pull request in your fork to the `develop` branch in the `zilliangroup/builder-backend` base repository.
+4. Once you are confident in your code changes, create a pull request in your fork to the `develop` branch in the `zilliangroup/zweb-builder-backend` base repository.
 5. If you've changed any APIs, please call this out in the pull request and ensure backward compatibility.
 6. Link the issue of the base repository in your Pull request description. [Guide](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue)
 7. When you raise a pull request, we automatically run tests on our CI. Please ensure that all the tests are passing for your code change. We will not be able to accept your change if the test suite doesn't pass.

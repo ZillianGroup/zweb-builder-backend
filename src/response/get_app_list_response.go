@@ -1,8 +1,8 @@
 package response
 
 import (
-	"github.com/zilliangroup/builder-backend/src/model"
-	"github.com/zilliangroup/builder-backend/src/storage"
+	"github.com/zilliangroup/zweb-builder-backend/src/model"
+	"github.com/zilliangroup/zweb-builder-backend/src/storage"
 )
 
 type AppListResponse struct {

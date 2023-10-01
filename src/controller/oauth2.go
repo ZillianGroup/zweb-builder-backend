@@ -4,9 +4,9 @@ import (
 	"fmt"
 
 	"github.com/gin-gonic/gin"
-	"github.com/zilliangroup/builder-backend/src/model"
-	"github.com/zilliangroup/builder-backend/src/utils/idconvertor"
-	"github.com/zilliangroup/builder-backend/src/utils/oauthgoogle"
+	"github.com/zilliangroup/zweb-builder-backend/src/model"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/idconvertor"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/oauthgoogle"
 )
 
 func (controller *Controller) GoogleOAuth2Exchange(c *gin.Context) {

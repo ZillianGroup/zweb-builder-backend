@@ -1,7 +1,7 @@
 package response
 
 import (
-	"github.com/zilliangroup/builder-backend/src/utils/idconvertor"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/idconvertor"
 )
 
 type DeleteAppResponse struct {

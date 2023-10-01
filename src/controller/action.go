@@ -11,11 +11,11 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"github.com/zilliangroup/builder-backend/src/model"
-	"github.com/zilliangroup/builder-backend/src/request"
-	"github.com/zilliangroup/builder-backend/src/response"
-	"github.com/zilliangroup/builder-backend/src/utils/accesscontrol"
-	"github.com/zilliangroup/builder-backend/src/utils/zwebresourcemanagersdk"
+	"github.com/zilliangroup/zweb-builder-backend/src/model"
+	"github.com/zilliangroup/zweb-builder-backend/src/request"
+	"github.com/zilliangroup/zweb-builder-backend/src/response"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/accesscontrol"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/zwebresourcemanagersdk"
 )
 
 func (controller *Controller) CreateAction(c *gin.Context) {

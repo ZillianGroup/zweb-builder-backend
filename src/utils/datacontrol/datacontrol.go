@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/zilliangroup/builder-backend/src/model"
-	"github.com/zilliangroup/builder-backend/src/utils/supervisor"
+	"github.com/zilliangroup/zweb-builder-backend/src/model"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/supervisor"
 )
 
 func GetUserInfo(targetUserID int) (*model.User, error) {

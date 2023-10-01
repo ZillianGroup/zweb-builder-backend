@@ -18,8 +18,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/zilliangroup/builder-backend/src/actionruntime/common"
-	parser_sql "github.com/zilliangroup/builder-backend/src/utils/parser/sql"
+	"github.com/zilliangroup/zweb-builder-backend/src/actionruntime/common"
+	parser_sql "github.com/zilliangroup/zweb-builder-backend/src/utils/parser/sql"
 
 	"github.com/go-playground/validator/v10"
 	mssql "github.com/microsoft/go-mssqldb"

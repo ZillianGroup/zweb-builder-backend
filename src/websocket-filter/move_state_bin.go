@@ -19,7 +19,7 @@ import (
 	"log"
 
 	"github.com/google/uuid"
-	"github.com/zilliangroup/builder-backend/src/websocket"
+	"github.com/zilliangroup/zweb-builder-backend/src/websocket"
 	"google.golang.org/protobuf/proto"
 )
 

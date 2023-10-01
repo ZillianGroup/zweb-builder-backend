@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/zilliangroup/builder-backend/src/utils/builderoperation"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/builderoperation"
 )
 
 const SNAPSHOT_TARGET_APP = "app"

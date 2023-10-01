@@ -18,9 +18,9 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/zilliangroup/builder-backend/src/model"
-	"github.com/zilliangroup/builder-backend/src/utils/builderoperation"
-	"github.com/zilliangroup/builder-backend/src/websocket"
+	"github.com/zilliangroup/zweb-builder-backend/src/model"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/builderoperation"
+	"github.com/zilliangroup/zweb-builder-backend/src/websocket"
 )
 
 func SignalUpdateState(hub *websocket.Hub, message *websocket.Message) error {

@@ -17,11 +17,11 @@ package filter
 import (
 	"errors"
 
-	"github.com/zilliangroup/builder-backend/src/model"
-	"github.com/zilliangroup/builder-backend/src/utils/datacontrol"
-	"github.com/zilliangroup/builder-backend/src/utils/remotejwtauth"
-	"github.com/zilliangroup/builder-backend/src/utils/supervisor"
-	"github.com/zilliangroup/builder-backend/src/websocket"
+	"github.com/zilliangroup/zweb-builder-backend/src/model"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/datacontrol"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/remotejwtauth"
+	"github.com/zilliangroup/zweb-builder-backend/src/utils/supervisor"
+	"github.com/zilliangroup/zweb-builder-backend/src/websocket"
 )
 
 func SignalEnter(hub *websocket.Hub, message *websocket.Message) error {
